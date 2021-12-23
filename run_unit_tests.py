@@ -55,7 +55,7 @@ else:
 
 
 # Now try transforming the test data set.
-transformed_test_data_set = DataSetTransformations.InterpolateMissingValues(test_data_set)
+transformed_test_data_set = DataSetTransformations.InterpolateMissingValues(test_data_set, 7)
 
 # The transformed data set returned must not be None.
 if(transformed_test_data_set == None):
@@ -88,5 +88,3 @@ if(transformed_test_data_set == expected_transformed_dataset):
 else:
     print("transformed_test_data_set was not the same as the expected_transformed_dataset. FAIL.")
 
-
-print(expected_test_data_2d_array_transformed)

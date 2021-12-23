@@ -20,7 +20,10 @@ def LoadDataSetFromCsv(filename):
                 if(cell == 'nan'):
                     cell_value = None
                 else:
-                    cell_value = float(cell)
+                    try:
+                        cell_value = float(cell)
+                    except ValueError:
+                        cell_value = None
 
                 data_row.append(cell_value)
 

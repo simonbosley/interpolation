@@ -28,7 +28,7 @@ interpolated_test_data_set = DataSet(interpolated_test_data)
 print("Loaded interpolated test data: \n\n" + str(interpolated_test_data_set))
 
 # Transform the input data set.
-transformed_input_test_data_set = DataSetTransformations.InterpolateMissingValues(input_test_data_set)
+transformed_input_test_data_set = DataSetTransformations.InterpolateMissingValues(input_test_data_set, 7)
 
 # Print what we transformed.
 print("Transformed input test data: \n\n" + str(transformed_input_test_data_set))
@@ -39,7 +39,7 @@ if not (input_test_data_set == interpolated_test_data_set):
 else:
     print("The input_test_data_set does match the interpolated_test_data_set, not expected. FAIL.")
 
-# Compare the transformed input DataSet with the expected loaded interpolated DataSet
+# Compare the transformed input DataSet with the expected loaded interpolated DataSet.
 if(transformed_input_test_data_set == interpolated_test_data_set):
     print("The transformed_input_test_data_set does match the expected interpolated_test_data_set. SUCCESS.")
 else:
