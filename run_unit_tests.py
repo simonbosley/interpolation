@@ -4,8 +4,8 @@ sys.path.insert(0, "./modules")
 
 #print(sys.path) # Uncomment this line if you're having trouble adding 'modules' to the python sys path, './modules' should come first, to avoid clashing with any other local module package.
 
-from modules import DataSet
-from modules import DataSetTransformations
+from modules.datapkg import DataSet
+from modules.datapkg import DataSetTransformations
 
 def test_row_count(data_set, expected_row_count):
     '''
