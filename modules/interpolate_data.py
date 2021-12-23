@@ -1,6 +1,6 @@
 import sys
 
-from filenames import FileNamesArgsReader
+from modules import FileNamesArgsReader
 
 # Create our comand line argument reader to extract the input and output file names.
 fileNames = FileNamesArgsReader.translate_args(sys.argv)

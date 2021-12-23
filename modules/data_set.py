@@ -49,12 +49,18 @@ class DataSet:
         return self.data_set[row][column]
 
     def __eq__(self, other):
+        '''
+        Equality operator, great for comparing DataSet objects.
+        '''
         if isinstance(other, self.__class__):
             return self.data_set == other.data_set
         else:
             return False
 
     def __ne__(self, other):
+        '''
+        inequality operator, just the opposite of the equality operator.
+        '''
         return not self.__eq__(other)
         
     def __str__(self):

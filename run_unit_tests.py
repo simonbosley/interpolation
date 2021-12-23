@@ -1,5 +1,11 @@
-from source.data_set import DataSet
-from source.data_set_transformations import DataSetTransformations
+import sys
+
+sys.path.insert(0, "./modules")
+
+#print(sys.path) # Uncomment this line if you're having trouble adding 'modules' to the python sys path, './modules' should come first, to avoid clashing with any other local module package.
+
+from modules import DataSet
+from modules import DataSetTransformations
 
 def test_row_count(data_set, expected_row_count):
     '''
@@ -82,3 +88,6 @@ if(transformed_test_data_set == expected_transformed_dataset):
     print("transformed_test_data_set was the same as the expected_transformed_dataset. SUCCESS.")
 else:
     print("transformed_test_data_set was not the same as the expected_transformed_dataset. FAIL.")
+
+
+print(expected_test_data_2d_array_transformed)

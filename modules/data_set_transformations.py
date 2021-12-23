@@ -1,4 +1,4 @@
-from source.data_set import DataSet
+from modules import DataSet
 
 class DataSetTransformations:
     '''
