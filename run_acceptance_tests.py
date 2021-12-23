@@ -1,7 +1,7 @@
 import sys
 
 sys.path.insert(0, "./modules")
-# print(sys.path) # Uncomment this line if you're having trouble adding 'modules' to the python sys path, './modules' should come first
+# print(sys.path) # Uncomment this line if you're having trouble adding the local 'modules' directory to the python sys path, './modules' should come first
 
 from modules.csvpkg import LoadDataSetFromCsv
 from modules.datapkg import DataSet
@@ -9,8 +9,11 @@ from modules.datapkg import DataSetTransformations
 
 print("\nRunning acceptance tests...\n")
 
+# Set the delimiter we expect in CSV files.
+delimiter = ','
+
 # Use our handy csv library to load the csv file into a 2D list.
-input_test_data = LoadDataSetFromCsv("./example_data/input_test_data.csv")
+input_test_data = LoadDataSetFromCsv("./example_data/input_test_data.csv", delimiter)
 
 # Create a DataSet object from the 2D list.
 input_test_data_set = DataSet(input_test_data)
@@ -19,7 +22,7 @@ input_test_data_set = DataSet(input_test_data)
 print("Loaded input test data: \n\n" + str(input_test_data_set))
 
 # Load the interpolated csv file.
-interpolated_test_data = LoadDataSetFromCsv("./example_data/interpolated_test_data.csv")
+interpolated_test_data = LoadDataSetFromCsv("./example_data/interpolated_test_data.csv", delimiter)
 
 # Create a DataSet object from the 2D list.
 interpolated_test_data_set = DataSet(interpolated_test_data)
@@ -27,8 +30,8 @@ interpolated_test_data_set = DataSet(interpolated_test_data)
 # Print what we loaded.
 print("Loaded interpolated test data: \n\n" + str(interpolated_test_data_set))
 
-# Transform the input data set.
-transformed_input_test_data_set = DataSetTransformations.InterpolateMissingValues(input_test_data_set, 7)
+# Transform the input data set, set the decimal place precision to 7. 
+transformed_input_test_data_set = DataSetTransformations.InterpolateMissingValues(input_test_data_set, dp_rounding=7)
 
 # Print what we transformed.
 print("Transformed input test data: \n\n" + str(transformed_input_test_data_set))

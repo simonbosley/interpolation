@@ -1,25 +1,25 @@
 class DataSet:
     '''
-    DataSet is an object that encapsulates a 2D square array of numbers and allow operations on them.
+    DataSet is an object that encapsulates a 2D square list of numbers and allow operations on them.
     '''
 
-    # The internal data set is a 2D array of floats.
+    # The internal data set is a 2D list of floats.
     def __init__(self, data_set):
         '''
-        C'tor takes a data_set, then it calculates the row/column count for future use.
+        C'tor takes data_set as a 2D list, then it calculates the row/column count for future use.
 
-        The data_set must not be None and must be a square 2D, no jaggie arrays allowed.
+        The data_set must not be None and must be a square 2D list, no jaggie lists allowed.
         '''
 
         # Store off the internal data set.
         self.data_set = data_set
         
-        # Calculate the row and column count once in the c'tor.
+        # Calculate the row and column count just once in the c'tor.
 
-        # The row count is simply the length of the 'outer' array of rows.
+        # The row count is simply the length of the 'outer' list of rows.
         self.row_count = len(data_set)
         
-        # Count the columns if we have a row, otherwise it's zero. Assumes we have a square 2D array.
+        # Count the columns if we have a row, otherwise it's zero. Assumes we have a square 2D list.
         if(self.row_count > 0):
             # Get the length of the first column as we assume that we have a 2D data set.
             self.column_count = len(data_set[0])
@@ -27,14 +27,20 @@ class DataSet:
             self.column_count = 0
 
     def get_row_count(self):
+        '''
+        Get the row count that we set in the c'tor.
+        '''
         return self.row_count
 
     def get_column_count(self):
+        '''
+        Get the column count that we set in the c'tor.
+        '''
         return self.column_count
 
     def __iter__(self):
         '''
-        Let consumer's iterate over this object as if it was the raw underlying 2D array.
+        Let consumers iterate over this object as if it was the raw underlying 2D list.
         '''
 
         for data_cell in self.data_set:
@@ -42,7 +48,7 @@ class DataSet:
 
     def __getitem__(self, row_column_tuple):
         '''
-        Allow 2D array like access by using a tuple with the subscript method.
+        Allow 2D list like access by using a tuple with the subscript method.
         '''
         row, column = row_column_tuple
         
@@ -65,7 +71,7 @@ class DataSet:
         
     def __str__(self):
         '''
-        Simply prints the data set to the screen
+        Simply prints the data set to the screen in a nice square.
         '''
 
         row_chunks = []
@@ -81,7 +87,14 @@ class DataSet:
             for column in row:
 
                 # Print the column and add a space at the end.
-                column_chunks.append(str(self.data_set[row_index][column_index]))
+                cell_data = str(self.data_set[row_index][column_index])
+                
+                # Add asterisks around any 'None' value to highlight it.
+                if(cell_data == "None"):
+                    column_chunks.append(f"**{cell_data}**")
+                else:
+                    column_chunks.append(cell_data)
+
                 column_chunks.append(" ")
                 column_index += 1
 

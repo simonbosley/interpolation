@@ -1,7 +1,7 @@
 import sys
 
 sys.path.insert(0, "./modules")
-# print(sys.path) # Uncomment this line if you're having trouble adding 'modules' to the python sys path, './modules' should come first
+# print(sys.path) # Uncomment this line if you're having trouble adding the local 'modules' directory to the python sys path, './modules' should come first
 
 from modules.datapkg import DataSet
 from modules.datapkg import DataSetTransformations
@@ -55,7 +55,7 @@ else:
 
 
 # Now try transforming the test data set.
-transformed_test_data_set = DataSetTransformations.InterpolateMissingValues(test_data_set, 7)
+transformed_test_data_set = DataSetTransformations.InterpolateMissingValues(test_data_set, dp_rounding=7)
 
 # The transformed data set returned must not be None.
 if(transformed_test_data_set == None):
