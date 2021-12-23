@@ -1,8 +1,7 @@
 import sys
 
 sys.path.insert(0, "./modules")
-
-#print(sys.path) # Uncomment this line if you're having trouble adding 'modules' to the python sys path, './modules' should come first, to avoid clashing with any other local module package.
+# print(sys.path) # Uncomment this line if you're having trouble adding 'modules' to the python sys path, './modules' should come first
 
 from modules.datapkg import DataSet
 from modules.datapkg import DataSetTransformations
