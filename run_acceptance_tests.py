@@ -4,6 +4,7 @@ sys.path.insert(0, "./modules")
 # print(sys.path) # Uncomment this line if you're having trouble adding the local 'modules' directory to the python sys path, './modules' should come first
 
 from modules.csvpkg import LoadDataSetFromCsv
+from modules.csvpkg import WriteDataSetToCsv
 from modules.datapkg import DataSet
 from modules.datapkg import DataSetTransformations
 
@@ -47,3 +48,8 @@ if(transformed_input_test_data_set == interpolated_test_data_set):
     print("The transformed_input_test_data_set does match the expected interpolated_test_data_set. SUCCESS.")
 else:
     print("The transformed_input_test_data_set does not match the expected interpolated_test_data_set. FAIL.")
+
+# Now write the transformed_input_test_data_set to a CSV file.
+WriteDataSetToCsv(transformed_input_test_data_set, "./example_data/transformed_input_test_data_set.csv", delimiter)
+
+# How should we know compare the contents of both files?
