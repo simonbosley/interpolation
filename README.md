@@ -17,7 +17,7 @@ To use them in your own python scripts you can read the 'interpolate_data.py' to
 
 # requirements
 
-You will need to run this project on a unix based system with python3 installed.
+You will need to run this project on a unix based system with python3 installed (this was created using Python 3.9.9).
 
 # getting started
 
