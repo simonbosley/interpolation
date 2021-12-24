@@ -44,5 +44,5 @@ python3 run_unit_tests.py
 To transform an input CSV file to a specified output CSV file, then run the command as follows:
 
 ```console
-python3 interpolate_data.py example_data/input_test_data.csv example_data/transformed_input_test_data_set.csv"
+python3 interpolate_data.py example_data/input_test_data.csv example_data/transformed_input_test_data_set.csv
 ```
