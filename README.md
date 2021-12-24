@@ -13,16 +13,36 @@ convert any missing values in an input DataSet and replace them with an interpol
 Missing values are interpolated by averaging all the available non-diagonal values adjacent to the missing value.
 
 The main re-usable functionality of the project is placed in packages in the modules folder. 
-To use them in your own python scripts you can read the 'run_acceptance_tests.py' and 'run_unit_tests.py' to see how this is done.
+To use them in your own python scripts you can read the 'run_unit_tests.py' to see how this is done.
 
-To get started, clone the repo, and navigate to the 'interpolation' root directory. See below for how to run the test scripts.
+# requirements
+
+You will need to run this project on a unix based system with python3 installed.
+
+# getting started
+
+Simply clone the repo to a local directory on your system, and navigate to the 'interpolation' root directory.
+
+# acceptance tests
+To run the acceptance tests run the following shell script:
+
+```console
+./acceptance_shell.sh
+```
+
+If you don't have permissions to execute, do a chmod +x on the file.
 
 # unit tests
 To run the unit tests navigate to the root interpolation folder, then run the following command:
 
+```console
 python3 run_unit_tests.py
+```
 
-# acceptance tests
-To run the acceptance tests navigate to the root interpolation folder, then run the following command:
+# using the python file yourself
 
-python3 run_acceptance_tests.py
+To transform an input CSV file to a specified output CSV file, then run the command as follows:
+
+```console
+python3 interpolate_data.py example_data/input_test_data.csv example_data/transformed_input_test_data_set.csv"
+```
