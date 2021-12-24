@@ -5,15 +5,15 @@ This project let's you:
 
     1. Read a CSV file of values into a 2D list.
     2. Create a DataSet object from a 2D list.
-    3. Tranform a DataSet object.
-    4. Write a CSV file from a DataSet object.
+    3. Tranform one DataSet object to another.
+    4. Write a new CSV file from a DataSet object.
 
 The currently available transformation 'InterpolateMissingValues' (in file modules/datapkg/data_set_transformations) allows you to 
 convert any missing values in an input DataSet and replace them with an interpolated value in the output DataSet (other values are left as is).
 Missing values are interpolated by averaging all the available non-diagonal values adjacent to the missing value.
 
 The main re-usable functionality of the project is placed in packages in the modules folder. 
-To use them in your own python scripts you can read the 'run_unit_tests.py' to see how this is done.
+To use them in your own python scripts you can read the 'interpolate_data.py' to see how this is done.
 
 # requirements
 
@@ -21,7 +21,7 @@ You will need to run this project on a unix based system with python3 installed.
 
 # getting started
 
-Simply clone the repo to a local directory on your system, and navigate to the 'interpolation' root directory.
+Simply clone the repo to a local directory on your system, and navigate to the 'interpolation' root directory, use the following notes.
 
 # acceptance tests
 To run the acceptance tests run the following shell script:
